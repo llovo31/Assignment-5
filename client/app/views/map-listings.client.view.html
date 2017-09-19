@@ -9,16 +9,26 @@
     https://angular-ui.github.io/angular-google-maps/#!/api/windows
   -->
 
-<div ng-controller="ListingsController" ng-init="find()" >
+<!-- <div ng-controller="ListingsController" ng-init="find()" >
     <ui-gmap-google-map center="map.center" zoom="map.zoom">
     	<ui-gmap-markers models= "listings" idkey= "'_id'" coords= "'coordinates'" icon="'icon'">
-    		<ui-gmap-windows show="show">
-    		<div>
+    		  <ui-gmap-windows show="show">
+    		    <div>
                 <div ng-non-bindable>{{code}}</div>
                 <div ng-non-bindable>{{name}}</div>
                 <div ng-non-bindable>{{address}}</div>                
             </div>
-            </ui-gmap-windows>
+          </ui-gmap-windows>
     	</ui-gmap-markers>
+    </ui-gmap-google-map>
+</div> -->
+
+<div ng-controller="ListingsController" ng-init="find()">
+    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+        <ui-gmap-markers models="listings" idkey= "'_id'" coords="'coordinates'" icon="'icon'" click="onClick">
+            <ui-gmap-windows show="show">
+                <div ng-non-bindable>{{code}}</div>
+            </ui-gmap-windows>
+        </ui-gmap-markers>
     </ui-gmap-google-map>
 </div>
